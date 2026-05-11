@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  # 1. REDIS
+  redis:
+    image: redis:alpine
+    container_name: shared-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: always
+
+  # 2. SMART BEAR SERVER (.NET)
+  sbs:
+    image: minhtri10504/smart-bear-server:latest
+    container_name: smart-bear-server
+    network_mode: host
+    depends_on:
+      - redis
+    volumes:
+      - sbs_uploads:/app/wwwroot
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:7017
+      - Redis__Configuration=127.0.0.1:6379,defaultDatabase=0
+      - AppConfiguration__BridgeBaseUrl=http://127.0.0.1:8000
+    restart: always
+
+  # 3. XIAOZHI BRIDGE (Python)
+  bridge:
+    image: minhtri10504/python-tts-server:latest
+    container_name: xiaozhi_bridge
+    network_mode: host
+    depends_on:
+      - sbs
+    restart: always
+
+volumes:
+  redis_data:
+  sbs_uploads:
