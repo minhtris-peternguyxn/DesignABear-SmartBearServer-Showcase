@@ -32,7 +32,7 @@
 |:-----------|:---------------------|:-----|
 | 🤖 **SmartBear IoT Server** | This repository / Repo hiện tại | You are here ✨ |
 | 🧸 **E-commerce Backend** | Custom toy e-commerce platform / Nền tảng bán gấu bông tuỳ chỉnh | [DesignABear-Ecommerce-Showcase](https://github.com/minhtris-peternguyxn/DesignABear-Ecommerce-Showcase) |
-| 📱 **Mobile App** | Flutter mobile application / Ứng dụng di động Flutter | [Coming Soon / Sẽ cập nhật](#) |
+| 📱 **Mobile App** | Flutter mobile application / Ứng dụng di động Flutter | [DesignABear-SmartBearMobileApp-Showcase](https://github.com/minhtris-peternguyxn/DesignABear-SmartBearMobileApp-Showcase) |
 
 ## 📄 Documentation & Demo / Tài Liệu & Demo
 
